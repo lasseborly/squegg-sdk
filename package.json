@@ -1,0 +1,55 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build --format cjs,esm,umd --name squegg",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build --format cjs,esm,umd --name squegg",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "squegg",
+  "author": "Lasse Borly <lasseborly@gmail.com>",
+  "module": "dist/squegg.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/squegg.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/squegg.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.10.1",
+    "husky": "^5.1.3",
+    "size-limit": "^4.10.1",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.1.0",
+    "typescript": "^3.9.9"
+  }
+}
