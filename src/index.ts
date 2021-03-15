@@ -6,12 +6,12 @@ export interface SqueggData {
   batteryCharge: number;
 }
 
-export const SERVICE_UUID = "0000ffb0-0000-1000-8000-00805f9b34fb";
-export const CHARACTERISTIC_UUID = "0000ffb2-0000-1000-8000-00805f9b34fb";
-export const DEVICE_NAME = "weixin-nini";
+export const SERVICE_UUID = '0000ffb0-0000-1000-8000-00805f9b34fb';
+export const CHARACTERISTIC_UUID = '0000ffb2-0000-1000-8000-00805f9b34fb';
+export const DEVICE_NAME = 'weixin-nini';
 
 export const BLUETOOTH_DEVICE_OPTIONS = {
-    filters: [{ name: DEVICE_NAME }, { services: [SERVICE_UUID] }]
+  filters: [{ name: DEVICE_NAME }, { services: [SERVICE_UUID] }],
 };
 
 export type Percentage = number;
@@ -27,12 +27,12 @@ export function _parseSqueezing(raw: string): boolean {
 }
 
 export function _parseStrength(values: string[]): number {
-  const raw = values.join("");
+  const raw = values.join('');
   return Number(parseFloat(raw).toFixed(1));
 }
 
 export function _fromCharCode(charCodes: CharCodes): string[] {
-  return charCodes.map((code) => String.fromCharCode(code));
+  return charCodes.map(code => String.fromCharCode(code));
 }
 
 export function dataViewToArray(dataView: DataView): number[] {
@@ -44,13 +44,13 @@ export function parseSquegg(charCodes: CharCodes): SqueggData {
   // The first values is not a known representation.
   values.shift();
 
-  const rawBatteryCharge: string = values.shift() || "0";
-  const rawSqueezing: string = values.shift() || "0";
+  const rawBatteryCharge: string = values.shift() || '0';
+  const rawSqueezing: string = values.shift() || '0';
 
   return {
     strength: _parseStrength(values),
     isSqueezing: _parseSqueezing(rawSqueezing),
-    batteryCharge: _parsebatteryCharge(rawBatteryCharge)
+    batteryCharge: _parsebatteryCharge(rawBatteryCharge),
   };
 }
 
