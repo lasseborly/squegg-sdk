@@ -44,8 +44,8 @@ export function parseSquegg(charCodes: CharCodes): SqueggData {
   // The first values is not a known representation.
   values.shift();
 
-  const rawBatteryCharge: string = values.shift() || '0';
-  const rawSqueezing: string = values.shift() || '0';
+  const rawBatteryCharge: string = values.shift() as string;
+  const rawSqueezing: string = values.shift() as string;
 
   return {
     strength: _parseStrength(values),
