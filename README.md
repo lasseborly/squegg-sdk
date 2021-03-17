@@ -14,11 +14,11 @@ That said it is a great product and can be aquired from [mysquegg.com](https://m
 ## Usage
 
 ```sh
-$ npm install squegg-sdk
+$ npm install @lasseborly/squegg-sdk
 ```
 
 ```javascript
-import { parseSquegg } from "squegg-sdk";
+import { parseSquegg } from "@lasseborly/squegg-sdk";
 
 /* 
  * Character codes should come from the device itself and it's your job to

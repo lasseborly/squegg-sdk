@@ -32,7 +32,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "squegg",
+  "name": "@lasseborly/squegg-sdk",
   "description": "Unofficial SDK for the SQUEGG Smart Hand Grip Trainer.",
   "author": "Lasse Borly <lasseborly@gmail.com>",
   "module": "dist/squegg.esm.js",
