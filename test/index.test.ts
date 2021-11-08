@@ -1,4 +1,4 @@
-import { parseSquegg } from '../src';
+import { parseSquegg } from '../src/index';
 
 describe('SQUEGG SDK', () => {
   it('parse list of char codes into squegg data', () => {
