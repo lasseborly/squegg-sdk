@@ -32,7 +32,7 @@ export function _parseStrength(values: string[]): number {
 }
 
 export function _fromCharCode(charCodes: CharCodes): string[] {
-  return charCodes.map(code => String.fromCharCode(code));
+  return charCodes.map((code) => String.fromCharCode(code));
 }
 
 export function dataViewToArray(dataView: DataView): number[] {
