@@ -1,6 +1,10 @@
 {
   "version": "0.1.2",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lasseborly/squegg-sdk.git"
+  },
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -16,7 +20,7 @@
     "test": "dts test",
     "test:ci": "npm run test -- --ci --coverage --maxWorkers=2",
     "lint": "dts lint",
-    "fix": "dts lint --fix",
+    "fix": "npm run lint -- --fix",
     "prepare": "npm run build",
     "size": "size-limit",
     "analyze": "size-limit --why"
@@ -24,7 +28,7 @@
   "peerDependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "dts lint"
+      "pre-commit": "npm run lint"
     }
   },
   "prettier": {
